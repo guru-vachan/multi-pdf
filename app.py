@@ -54,6 +54,12 @@ while True:
 
     results = search(query, embedding_model, index, chunks)
 
+    # For Debuggiing
+    for i, c in enumerate(results):
+        print(f"\nRank {i+1}")
+        print("Source:",  c["source"])
+        print("Text:",  c["text"][:200])
+
     for r in results:
         print(f"\n[Source: {r['source']} | Page: {r['page']}]")
     
